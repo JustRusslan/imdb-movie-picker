@@ -33,17 +33,4 @@ pip install flask
 
 4. **Run the application:**
 python app.py
-Then open your browser and go to http://127.0.0.1:5000/.
-
-Folder Structure
-│
-├── static/
-│   └── style.css         ← contains styles (CSS)
-│
-├── templates/
-│   ├── layout.html       ← base layout template
-│   ├── index.html        ← main page
-│   └── nice.html         ← "Nice" movie page
-│
-├── app.py                ← Flask application
-└── movies_datalab.db     ← SQLite database
+Then open your browser and go to http://127.0.0.1:5000/
