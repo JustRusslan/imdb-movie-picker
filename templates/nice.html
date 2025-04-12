@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+{% for i in nice_movie %}
+    <img src="{{ i[4] }}" class="poster" width="150" height="220">
+    <h2>Great choice!</h2>
+    <p>You selected <strong>{{ i[1] }}</strong></p>
+    <p>Enjoy watching it 🎬</p>
+{% endfor %}
+{% endblock %}

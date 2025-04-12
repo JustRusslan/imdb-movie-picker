@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block body %}
+<img src="https://static.amazon.jobs/teams/53/images/IMDb_Header_Page.jpg?1501027252" class="logo">
+
+<h1>IMDb Top 250 Random Movie Picker</h1>
+
+<form action="/next" method="post">
+    {% for i in movie %}
+    <div class="movie-card">
+        <img src="{{ i[4] }}" class="poster" width="150" height="220"><br>
+        <li><strong>{{ i[1] }}</strong></li>
+        <li>Year: {{ i[2] }}</li>
+        <li>Rating: {{ i[3] }}</li>
+    </div>
+    {% endfor %}
+    <input type="submit" value="Next Movie">
+</form>
+
+<form action="/watched" method="post">
+    <input type="submit" value="Mark as Watched">
+</form>
+
+<form action="/nice" method="post">
+    <input type="submit" value="I Liked This Movie">
+</form>
+
+<h2>Previously Watched Movies</h2>
+<form action="/history" method="post">
+    <input type="submit" value="Show History">
+    {% for i in watched_movies %}
+    <li>{{ i[1] }} ({{ i[2] }}) — ★{{ i[3] }} — {{ i[6] }}</li>
+    {% endfor %}
+</form>
+{% endblock %}
